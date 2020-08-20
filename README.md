@@ -2,6 +2,8 @@
 
 A derivative of wiorca/docker-windscribe that provides Sonarr services.
 
+NOTE: You will need to provide the configuration of Sonarr.  I do not provide a default configuration that points to /tv or /data.  It will make your life easier if the paths inside your torrent client (/data) lines up with your sonarr image.  I provide /data for torrents/downloads, and /tv for the library.  If you need to add/modify, then feel free to do so to your hearts content.
+
 ## About the image
 
 Windscribe docker container that provides Sonarr services.  It's a minimalst image that provides very little configuration out of the box.
