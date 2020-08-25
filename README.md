@@ -36,7 +36,6 @@ docker create \
   -v /location/elsewhere:/data \
   -v /location/elsewhere:/tv \
   --dns 8.8.8.8 \
-  --dns 10.255.255.1 \
   -p 8989:8989 \
   --cap-add NET_ADMIN \
   --restart unless-stopped \
@@ -75,7 +74,6 @@ services:
       - 8989:8989
     dns:
       - 8.8.8.8
-      - 10.255.255.1
     cap-add:
       - NET_ADMIN
     restart: unless-stopped
