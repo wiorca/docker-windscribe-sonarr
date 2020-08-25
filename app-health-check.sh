@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# Check to make sure qbittorrent-nox is running
+# Check to make sure Sonarr is running
 
 QBTNX=$(pgrep mono | wc -l )
 if [[ ${QBTNX} -ne 1 ]]

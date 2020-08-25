@@ -5,10 +5,10 @@ FROM wiorca/docker-windscribe:latest
 # Version
 ARG VERSION=0.0.2
 
-# Expose the webadmin port for qBittorrent
-EXPOSE 8080/tcp
+# Expose the webadmin port for Sonarr
+EXPOSE 8989/tcp
 
-# Create a volume for the bittorrent data
+# Create a volume for the bittorrent data and library
 VOLUME [ "/data", "/tv" ]
 
 # Update ubuntu container, and install the basics, Add windscribe ppa, Install windscribe, and some to be removed utilities
