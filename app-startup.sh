@@ -9,5 +9,5 @@ ip addr
 
 echo "Starting Sonarr Service"
 
-mono /opt/NzbDrone/NzbDrone.exe
+mono /usr/lib/sonarr/bin/Sonarr.exe
 
