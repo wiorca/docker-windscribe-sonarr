@@ -1,9 +1,9 @@
 
-# Based on Ubuntu 20.04 LTS
-FROM wiorca/docker-windscribe:latest
+# Based on wiorca/docker-windscribe-mono
+FROM wiorca/docker-windscribe-mono:latest
 
 # Version
-ARG VERSION=0.0.4
+ARG VERSION=0.0.5
 
 # Expose the webadmin port for Sonarr
 EXPOSE 8989/tcp
@@ -11,10 +11,8 @@ EXPOSE 8989/tcp
 # Create a volume for the bittorrent data and library
 VOLUME [ "/data", "/tv" ]
 
-# Update ubuntu container, and install the basics, Add windscribe ppa, Install windscribe, and some to be removed utilities
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF && \
-    echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | tee /etc/apt/sources.list.d/mono-official-stable.list && \
-    apt -y update && apt install -y mono-devel mediainfo && \
+# Install mediainfo
+RUN apt -y update && apt install -y mediainfo && \
     apt -y autoremove && apt -y clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Link the sonarr data directory somewhere useful
