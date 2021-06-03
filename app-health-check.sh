@@ -12,4 +12,3 @@ fi
 echo "Sonarr is running"
 
 exit 0
-

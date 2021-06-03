@@ -3,7 +3,7 @@
 FROM wiorca/docker-windscribe-mono:latest
 
 # Version
-ARG VERSION=0.0.5
+ARG VERSION=0.0.6
 
 # Expose the webadmin port for Sonarr
 EXPOSE 8989/tcp
@@ -24,6 +24,6 @@ ADD app-startup.sh /opt/scripts/app-startup.sh
 ADD app-setup.sh /opt/scripts/app-setup.sh
 
 # Download the latest sonarr
-RUN curl -L https://services.sonarr.tv/v1/download/phantom-develop/latest?version=3\&os=linux \
+RUN curl -L https://services.sonarr.tv/v1/download/main/latest?version=3\&os=linux \
     | tar xvz --directory /opt && chmod -R a+rx /opt/Sonarr
 
